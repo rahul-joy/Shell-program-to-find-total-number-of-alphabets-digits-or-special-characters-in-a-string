@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Function to calculate the factorial of a number
+factorial() {
+    local num=$1
+    local result=1
+    for ((i = 1; i <= num; i++)); do
+        result=$((result * i))
+    done
+    echo $result
+}
+
+# Input the first number
+echo "Enter the first number:"
+read number1
+
+# Input the second number
+echo "Enter the second number:"
+read number2
+
+# Calculate the factorial of the first number
+fact1=$(factorial $number1)
+echo "Factorial of $number1 is $fact1"
+
+# Calculate the factorial of the second number
+fact2=$(factorial $number2)
+echo "Factorial of $number2 is $fact2"
+
+# Calculate the sum of the two factorials
+sum_result=$((fact1 + fact2))
+echo "$fact1 + $fact2 = $sum_result"
+
